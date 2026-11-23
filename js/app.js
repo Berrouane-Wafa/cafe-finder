@@ -264,7 +264,7 @@ $('find-location').addEventListener('click', () => {
   }, err => {
     s.textContent = ({ 1: 'Location permission was denied.', 2: 'Your location is unavailable.', 3: 'Location request timed out.' })[err.code] || 'Location error.';
   },
-    { enableHighAccuracy: false, timeout: 10000, maximumAge: 60000 });
+    { enableHighAccuracy : true, timeout: 10000, maximumAge: 60000 });
 });
 
 $('area-btn').addEventListener('click', load);
