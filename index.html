@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Finder</title>
+    <!-- This is a speed hint. It tells the browser to open a connection to Google’s font server early -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- This one does the real work. It loads a small CSS file from Google that defines the font -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Add Leaflet CSS here -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>  
+    <header class="topbar">
+     <div class="brand">
+        <img class="logo" src="assets/icons/hot-coffee(1).png" alt="hot-coffee">
+        <div>
+         <strong>Cafe Finder</strong>
+         <small>Find Cafe near you</small>
+        </div>
+     </div>
+     <form id="search-form" class="search">
+        <input id="search-input" type="search" placeholder="Search a city or neighborhood" aria-label="Search a place" >
+        <button type="submit" class="btn">Search</button>
+     </form>
+     <select id="radius" aria-label="Search radius">
+        <option value="500">0.5 Km</option>
+        <option value="1000">1 Km</option>
+        <option value="2000">2 Km</option>
+        <option value="3000">3 Km</option>
+     </select>
+     <select id="filter" aria-label="Filter by feature">
+        <option value="">All features</option>
+        <option value="takeaway=yes">Takeaway</option>
+        <option value="outdoor_seating=yes">Outdoor seating</option>
+        <option value="internet_access=wlan">Wi-Fi</option>
+     </select>
+    </header>
+    <main class="layout">
+        <aside class="panel">
+            <div class="tab">
+                Nearby Cafes <span id="count">0</span>
+            </div>
+            <p id="location-status" class="sub">Distance from map center</p>
+            <div id="list" class="list">
+
+            </div>
+        </aside>
+        <section class="mapwrap">
+            <div id="map"></div>
+            <button id="area-btn" class="btn float area" hidden>Search this area</button>
+            <button id="find-location" class="btn float locate">Use my location</button>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
