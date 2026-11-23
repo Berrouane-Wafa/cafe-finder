@@ -29,15 +29,15 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 const layer = L.layerGroup().addTo(map);
 //creating an icon
 //1-using html
-// const cupIcon = L.divIcon({ className: 'cup', html: '☕', iconSize: [34, 34], iconAnchor: [17, 17] });
-//2 -using image
-const cupIcon = L.icon({
-  iconUrl: '../assets/icons/iconCafe.png',  
-  iconSize: [36, 36],          // displayed width and height in pixels
-  iconAnchor: [18, 36],        // the point of the image placed on the coordinate
-  popupAnchor: [0, -36], // where the popup opens, relative to the anchor
-  className:   'cup'    
-});
+const cupIcon = L.divIcon({ className: 'cup', html: '☕', iconSize: [34, 34], iconAnchor: [17, 17] });
+// 2 -using image
+// const cupIcon = L.icon({
+//   iconUrl: '../assets/icons/iconCafe.png',  
+//   iconSize: [36, 36],          // displayed width and height in pixels
+//   iconAnchor: [18, 36],        // the point of the image placed on the coordinate
+//   popupAnchor: [0, -36], // where the popup opens, relative to the anchor
+//   className:   'cup'    
+// });
 
 let markers = {}, userMarker = null, moving = false;
 
